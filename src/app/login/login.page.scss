@@ -1,0 +1,28 @@
+.banner {
+    background-color: black; /* Fundo preto */
+    text-align: center;
+    color: #fff; /* Texto branco */
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Necessário para posicionar o ::before */
+    overflow: hidden; /* Garante que o pseudo-elemento não vaze */
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../assets/banner.jpeg') no-repeat center/cover;
+    opacity: 0.3; /* Apenas a imagem com baixa opacidade */
+    z-index: 1; /* Coloca a imagem atrás do conteúdo */
+}
+
+.banner > * {
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique acima da imagem */
+}

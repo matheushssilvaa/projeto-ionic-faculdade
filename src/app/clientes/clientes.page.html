@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Clientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="banner">
+    <h2>Clientes cadastrados</h2>
+  </div>
+  <ion-item [button]="true" *ngFor="let usuario of usuarios">
+    <ion-avatar aria-hidden="true" slot="start">
+      <img alt=""
+        src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=" />
+    </ion-avatar>
+    <ion-label>{{usuario.nome}}<br>
+      <span style="color: #868686;">{{usuario.email}}</span>
+    </ion-label>
+  </ion-item>
+</ion-content>

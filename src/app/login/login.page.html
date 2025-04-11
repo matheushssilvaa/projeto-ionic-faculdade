@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Meu sistema
+      </ion-card-title>
+      <ion-card-subtitle>
+        Digite suas credenciais
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-input clear-input label="email" labelPlaceholder="foating" [(ngModel)]="login"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input clear-input label="senha" type="password" labelPlaceholder="foating"
+            [(ngModel)]="senha"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-button color="warning" (click)="entrar(login, senha)">Entrar</ion-button>
+      <p>{{nomeUser}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
