@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-produtos',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutosPage implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   produtos = [
     {
@@ -71,10 +72,16 @@ export class ProdutosPage implements OnInit {
 
   limitarCaracteres(texto: string, limite: number): string {
     if (texto.length <= limite) {
-        return texto;
+      return texto;
     }
     return texto.substring(0, limite) + '...';
-}
+  }
+
+  navegarParaProdutoIndividual(nomeProduto: string): void {
+    var routeUrl = `localhost:8100/produto/${nomeProduto}`
+    this.route.navigate([routeUrl]);
+    console.log(routeUrl);
+  }
 
   ngOnInit() {
   }

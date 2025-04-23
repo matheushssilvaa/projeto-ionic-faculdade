@@ -9,9 +9,9 @@ import { UserService } from '../api/user.service';
 })
 export class LoginPage implements OnInit {
 
-  nomeUser: string = "";
-  login: string = "";
-  senha: string = "";
+  nomeUser: string = '';
+  login: string = '';
+  senha: string = '';
 
   constructor(private dadoUser: UserService) { }
 
@@ -22,8 +22,8 @@ export class LoginPage implements OnInit {
     } else {
       this.nomeUser = "Login ou senhas inválidos";
     }
-    this.login = "";
-    this.senha = "";
+    this.login = '';
+    this.senha = '';
   }
 
   ngOnInit() {
